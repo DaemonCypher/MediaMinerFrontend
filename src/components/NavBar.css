@@ -1,0 +1,160 @@
+@reference "tailwindcss";
+
+.navbar {
+  @apply relative
+         bg-[#1f2937]/10
+         ring-1 ring-[#ffffff]/12;
+}
+
+/* bottom hairline */
+.navbar::after {
+  content: "";
+  @apply pointer-events-none absolute inset-x-0 bottom-0 h-px
+         bg-[#ffffff]/18;
+}
+
+.navbar__container {
+  @apply w-full px-8;
+}
+
+.navbar__bar {
+  @apply relative flex h-20 items-center justify-between;
+}
+
+/* Mobile hamburger wrapper */
+.navbar__mobileWrap {
+  @apply absolute inset-y-0 left-0 flex items-center sm:hidden;
+}
+
+/* Hamburger button background */
+.navbar__hamburgerBtn {
+  @apply inline-flex items-center justify-center rounded-md p-2
+         bg-[#111827]/60
+         text-[#e5e7eb]
+         ring-1 ring-[#ffffff]/10
+         hover:bg-[#111827]/80
+         hover:text-[#646CFFAB]
+         transition;
+}
+
+.navbar__brandRow {
+  @apply flex flex-1 items-center justify-center sm:justify-start;
+}
+
+.navbar__brand {
+  @apply text-xl font-bold text-[#ffffff];
+}
+
+.navbar__links {
+  @apply hidden sm:ml-8 sm:flex gap-6;
+}
+
+.navbar__link {
+  @apply relative text-sm font-medium
+         text-[#d1d5db]
+         transition-colors duration-200;
+}
+
+/* animated underline */
+.navbar__link::after {
+  content: "";
+  @apply absolute left-1/2 -bottom-1 h-[2px] w-0
+         bg-[#646CFF]
+         transition-all duration-300 ease-out;
+  transform: translateX(-50%);
+}
+
+.navbar__link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #646CFF66;
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+
+.navbar__right {
+  @apply absolute inset-y-0 right-0 flex items-center sm:static sm:ml-6;
+}
+
+.navbar__avatarBtn {
+  @apply flex rounded-full
+         focus:outline-none
+         focus-visible:ring-2
+         focus-visible:ring-[#6366f1];
+}
+
+.navbar__avatar {
+  @apply h-8 w-8 rounded-full;
+}
+
+/* Desktop user dropdown */
+.navbar__dropdown {
+  @apply fixed right-0 z-50 w-72 rounded-none
+         bg-[#111827]/98 backdrop-blur py-2
+         border border-[#ffffff]/12 border-t-0
+         shadow-[-12px_12px_32px_#00000073,_-4px_0_12px_#00000059];
+  top: 80px;
+}
+
+
+
+.navbar__dropdownHeader {
+  @apply px-4 py-2 text-xs
+         text-[#9ca3af];
+}
+
+.navbar__dropdownEmail {
+  @apply truncate text-sm
+         text-[#e5e7eb];
+}
+
+.navbar__dropdownItem {
+  @apply relative block px-4 py-2 text-sm
+         text-[#d1d5db]
+         transition-all duration-200;
+}
+
+.navbar__dropdownItem:hover {
+  background-color: #ffffff0d; /* ~5% white */
+  color: #ffffff;
+  text-shadow: 0 0 6px #646CFF66;
+}
+
+
+/* Mobile panel */
+.navbar__mobilePanel {
+  @apply fixed left-0 right-0
+         bg-[#111827]/95
+         backdrop-blur
+         ring-1 ring-[#ffffff]/10
+         shadow-2xl;
+  top: 80px; /* navbar is h-20 */
+  z-index: 9999;
+}
+
+.navbar__mobilePanelInner {
+  @apply space-y-2 px-0 py-4;
+}
+
+.navbar__mobileLink {
+  @apply block rounded-lg px-3 py-3 text-sm font-medium
+         text-[#e5e7eb]
+         transition-all duration-200;
+}
+
+.navbar__mobileLink:hover {
+  background-color: #ffffff1a; 
+  color: #646CFF;
+  text-shadow: 0 0 6px #646CFF66;
+}
+
+.navbar__link--active {
+  color: #ffffff;
+  text-shadow: 0 0 8px #646CFF88;
+}
+
+.navbar__link--active::after {
+  width: 100%;
+}
