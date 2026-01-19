@@ -1,3 +1,4 @@
+# WIP & AI Generated
 # Media Miner Frontend
 
 Frontend hosted on Firebase with Authentication support.
