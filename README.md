@@ -44,3 +44,5 @@ firebase login
 ```bash
 firebase deploy
 ```
+## Note about project
+This is proof of conecept project seeing how far a user can push a complete AI generated project. From the looks of it and initial testing and prototyping everything is in order. There may be potential wiriring issue between [https://github.com/DaemonCypher/MediaMinerFrontend/tree/main](https://github.com/DaemonCypher/MediaMinerBackend/tree/main)  and this repo.
